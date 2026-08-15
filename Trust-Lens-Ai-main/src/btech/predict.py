@@ -23,8 +23,8 @@ from btech.analyzers.office import DocAnalyzer, ExcelAnalyzer, PowerPointAnalyze
 from btech.analyzers.pdf import PDFAnalyzer
 from btech.analyzers.script import ScriptAnalyzer
 
-MODEL_PATH = "Models/multiformat_model.joblib"
-PREPROCESSOR_PATH = "Models/multiformat_preprocessor.joblib"
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "Models", "multiformat_model.joblib")
+PREPROCESSOR_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "Models", "multiformat_preprocessor.joblib")
 
 
 class TrustLensPredictor:
@@ -41,8 +41,8 @@ class TrustLensPredictor:
         self.preprocessor: Any = None
         self.is_loaded = False
 
-        self.pe_model_path = "Models/malware_model.joblib"
-        self.pe_preprocessor_path = "Models/preprocessor.joblib"
+        self.pe_model_path = os.path.join(os.path.dirname(__file__), "..", "..", "Models", "malware_model.joblib")
+        self.pe_preprocessor_path = os.path.join(os.path.dirname(__file__), "..", "..", "Models", "preprocessor.joblib")
         self.pe_model: Any = None
         self.pe_preprocessor: Any = None
         self.is_pe_loaded = False
